@@ -1,0 +1,114 @@
+body{
+    background: #eff0f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.container{
+    height: 500px;
+    width: 500px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+    5px 25px 20px rgba(0,0,0,0.05),
+    5px 20px 30px rgba(0,0,0,0.05),
+    inset -20px -20px 25px rgba(2555, 2551, 255, .9);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock-digit{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+   
+}
+.clock-digit span{
+    position: absolute;
+    transform: rotate(calc(var(--value)*30deg));
+    inset: 6px;
+    text-align: center;
+}
+.clock-digit span p{
+    font-size: 32px;
+    color: rgba(0, 0,0,.6);
+    transform: rotate(calc(var(--value)*-30deg));
+}
+.threeNeedle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.needle{
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+ }
+.needle.hours{
+    width: 300px;
+    height: 300px;
+    /*border: 2px solid red;*/
+    transform: rotate(30deg);
+}
+.needle i{
+    display: inline-block;
+    transform-origin: bottom;
+    border-radius: 50%;
+}
+.needle.hours i{
+    /* half the parent height: ; */
+    width: 8px;
+    height: 150px;
+    background: #ff006f;
+    
+}
+.needle.minutes{
+    width: 400px;
+    height: 400px;
+    transform: rotate(210deg);
+    /*border: 2px solid blue;*/
+}
+.needle.minutes::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background: #00b3ff;
+    border-radius: 50%;
+}
+.needle.minutes i{
+    /* half the parent height: ; */
+    width: 8px;
+    height: 200px;
+    background: #00b3ff;
+    
+}
+.needle.seconds{
+    width: 440px;
+    height: 440px;
+    transform: rotate(150deg);
+    /*border: 2px solid green*/
+}
+.needle.seconds::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background: #eff0f4;
+    border-radius: 50%;
+}
+.needle.seconds i{
+    /* half the parent height: ; */
+    width: 4px;
+    height: calc(220px + 60px);
+    background: rgba(0, 0, 0, .6);
+}
